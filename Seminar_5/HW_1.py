@@ -2,7 +2,7 @@
 Напишите функцию get_file_info, которая принимает на вход строку - абсолютный путь до файла.
 Функция возвращает кортеж из трёх элементов: путь, имя файла, расширение файла.
 '''
-
+'''
 file_path1 = "C:/Users/User/Documents/example.txt"
 reply1 = ('C:/Users/User/Documents/', 'example', '.txt')
 file_path2 = '/home/user/data/file'
@@ -15,7 +15,7 @@ file_path5 = '/home/user/docs/my.file.with.dots.txt'
 reply5 = ('/home/user/docs/', 'my.file.with.dots', '.txt')
 file_path6 = 'file_in_current_directory.txt'
 reply6 = ('', 'file_in_current_directory', '.txt')
-
+'''
 import os.path
 
 
@@ -30,7 +30,7 @@ def get_file_info(file_path):
         name, extension = os.path.splitext(file_name)
         return (dir_path, name, extension)
 
-
+'''
 print(reply1)
 print(get_file_info(file_path1))
 print(get_file_info(file_path1) == reply1)
@@ -49,3 +49,4 @@ print(get_file_info(file_path5) == reply5)
 print(reply6)
 print(get_file_info(file_path6))
 print(get_file_info(file_path6) == reply6)
+'''
