@@ -8,10 +8,14 @@
 Не забудьте распечатать в конце результат.
 '''
 
+''''''
+
 
 def premium(names: list[str], cash: list[int], percent: list[str]) -> dict[str:float]:
     return {name: money / 100 * perc
             for name, money, perc in zip(names, cash, (float(i[:-1]) for i in percent))}
+
+
 
 
 reply1 = {'Alice': 500.0, 'Bob': 300.0, 'Charlie': 1050.0}
@@ -20,4 +24,7 @@ names = ["Alice", "Bob", "Charlie"]
 salary = [5000, 6000, 7000]
 bonus = ["10%", "5%", "15%"]
 
-print(premium(names,salary,bonus))
+
+
+result = {name: sal * b / 100 for name, sal, b in zip(names, salary,  [float(b.strip("%")) for b in bonus])}
+print(result)
