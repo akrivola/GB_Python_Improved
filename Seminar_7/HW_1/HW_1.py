@@ -14,21 +14,28 @@ f. Папка test_folder доступна из текущей директор�
 import os
 
 
-def rename_files(desired_name, num_digits, source_ext, target_ext):
+def rename_files(desired_name='', num_digits=1, source_ext="", target_ext="", diap=None):
     test_folder = "test_folder"
     file_list = [file.split('.') for root, dirs, files
                  in os.walk(test_folder) for file in files]
-
-    print(file_list)
+    if diap != None:
+        [start, end] = diap
+    # print(file_list)
     numr = 1
     for (name, ext) in file_list:
         if ext == source_ext:
             initial_full_name = os.path.join(test_folder, name) + '.' + ext
-            changed_name = os.path.join(test_folder, desired_name + f'{numr:0{num_digits}}')
-            changed_ext = target_ext
+            if diap != None:
+                short_name = name[start - 1:end]
+            else:
+                short_name = ""
+            if target_ext == "":
+                target_ext = ext
+            changed_name = os.path.join(test_folder,
+                                        short_name + desired_name + f'{numr:0{num_digits}}') + '.' + target_ext
             numr += 1
-            print(f'{initial_full_name} --> {changed_name}.{changed_ext}')
-            # os.rename()
+            # print(f'{initial_full_name} --> {changed_name}.{changed_ext}')
+            os.rename(initial_full_name, changed_name)
 
 
 rename_files(desired_name="new_file_", num_digits=3, source_ext="txt", target_ext="doc")
