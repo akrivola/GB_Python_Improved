@@ -1,0 +1,22 @@
+[
+    {
+        "Path": "geekbrains/my_ds_projects/My-code",
+        "Type": "Directory",
+        "Size": 342
+    },
+    {
+        "Path": "geekbrains/my_ds_projects/My-code/GB_data",
+        "Type": "Directory",
+        "Size": 171
+    },
+    {
+        "Path": "geekbrains/my_ds_projects/My-code/GB_data/fruits.csv",
+        "Type": "File",
+        "Size": 101
+    },
+    {
+        "Path": "geekbrains/my_ds_projects/My-code/GB_data/list_of_names.txt",
+        "Type": "File",
+        "Size": 70
+    }
+]
