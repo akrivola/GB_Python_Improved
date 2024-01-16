@@ -1,4 +1,7 @@
-# Введите ваше решение ниже
+class NegativeValueError(Exception):
+    def init(self, message="Значение не может быть отрицательным"):
+        self.message = message
+        super().init(self.message)
 
 class Rectangle:
     """
@@ -21,6 +24,10 @@ class Rectangle:
     """
 
     def __init__(self, width, height=None):
+        if width < 0:
+            raise NegativeValueError("Ширина должна быть положительной, а не " + str(width))
+        if height is not None and height < 0:
+            raise NegativeValueError("Высота должна быть положительной, а не " + str(height))
         self.width = width
         if height is None:
             self.height = width
@@ -130,3 +137,7 @@ class Rectangle:
         - str: строковое представление прямоугольника
         """
         return f"Rectangle({self.width}, {self.height})"
+
+# Создание прямоугольника
+# r = Rectangle(-2)
+r = Rectangle(5, -3)
