@@ -18,19 +18,20 @@
 '''
 class Archive:
     _instance = None
+    archive_text = []
+    archive_number = []
 
     def __init__(self, text, number):
         self.text = text
         self.number = number
-        self.archive_text = []
-        self.archive_number = []
+        Archive.archive_text.append(text)
+        Archive.archive_number.append(number)
 
     def __repr__(self):
         return f"Archive(text={self.text}, number={self.number})"
 
     def __str__(self):
-        return f"Current: {self.text}, {self.number}\nArchived: {self.archive_text}, {self.archive_number}"
-
+        return f"Text is {self.text} and number is {self.number}. Also {Archive.archive_text} and {Archive.archive_number}"
     @staticmethod
     def new(cls, text, number):
         if cls._instance:
@@ -43,5 +44,6 @@ class Archive:
         return cls._instance
 
 archive1 = Archive("Запись 1", 42)
+print(archive1)
 archive2 = Archive("Запись 2", 3.14)
-
+print(archive2)
