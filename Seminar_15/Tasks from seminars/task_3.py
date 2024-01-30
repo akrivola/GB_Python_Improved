@@ -11,7 +11,7 @@
 
 import logging
 
-logging.basicConfig(filename='Log/log_3.log',
+logging.basicConfig(filename='Logs/log_3.log',
                     filemode='w',
                     encoding='utf-8',
                     format='{levelname} - {asctime} в строке'

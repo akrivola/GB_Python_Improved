@@ -2,7 +2,7 @@ import logging
 import os
 from collections import namedtuple
 
-logging.basicConfig(filename='Log/Data_log.log',
+logging.basicConfig(filename='Logs/Data_log.log',
                     filemode='a',
                     encoding='utf-8',
                     format='{levelname} - {asctime} : {msg}',

@@ -1,7 +1,7 @@
 import logging
 from datetime import datetime, date
 
-logging.basicConfig(filename='Log/log_4.log',
+logging.basicConfig(filename='Logs/log_4.log',
                     filemode='w',
                     encoding='utf-8',
                     format='{levelname} - {asctime} функция "{funcName}()"'

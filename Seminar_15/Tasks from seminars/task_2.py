@@ -1,6 +1,6 @@
 import logging
 
-logging.basicConfig(filename='Log/log_2.log',
+logging.basicConfig(filename='Logs/log_2.log',
                     filemode='w',
                     encoding='utf-8',
                     format='{levelname} - {asctime} в строке '
