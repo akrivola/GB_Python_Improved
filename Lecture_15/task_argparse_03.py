@@ -5,4 +5,4 @@ parser.add_argument('numbers', metavar='N', type=float, nargs='*', help='press s
 args = parser.parse_args()
 print(f'Получили экземпляр класса Namespace: {args = }')
 print(f'У Namespace работает точечная нотация: {args.numbers = }')
-print(f'Объекты внутри могут быть любыми: {args.numbers[1] = }')
+print(f'Объекты внутри могут быть любыми: {args.numbers[0] = }')
